@@ -1,0 +1,6 @@
+{
+  "name": "SpeakCraft English",
+  "description": "Learn English with Confidence. Premium spoken English courses, IELTS preparation, interactive grammar lessons, and daily speaking practice for Bangladeshi learners.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
