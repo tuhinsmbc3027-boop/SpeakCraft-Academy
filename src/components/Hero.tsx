@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles, ArrowRight, CheckCircle2, Users, Award, Play } from 'lucide-react';
 import { Language } from '../types';
+import heroImg from '../assets/images/hero_speakcraft_learning_1793359320826.jpg';
 
 interface HeroProps {
   currentLang: Language;
@@ -16,7 +17,7 @@ export const Hero: React.FC<HeroProps> = ({
   onOpenVideoDemo,
 }) => {
   return (
-    <section className="relative bg-[#0B1B3D] text-white overflow-hidden pt-8 pb-16 lg:py-20 border-b border-slate-800">
+    <section className="relative bg-[#0B1B3D] text-white overflow-hidden pt-6 pb-12 sm:pt-8 sm:pb-16 lg:py-20 border-b border-slate-800">
       {/* Background radial ambient glow */}
       <div
         className="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"
@@ -28,20 +29,20 @@ export const Hero: React.FC<HeroProps> = ({
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Left Column: Core Value Proposition */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Clean unboxed kicker (Zero-pill discipline) */}
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-amber-400 mb-4">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-semibold tracking-wider text-amber-400 mb-3 sm:mb-4">
               <span>SPEAKCRAFT BANGLADESH</span>
               <span aria-hidden="true">·</span>
               <span>LEARN ENGLISH WITH CONFIDENCE</span>
-              <span aria-hidden="true">·</span>
-              <span>BATCH 42 ADMISSIONS OPEN</span>
+              <span aria-hidden="true" className="hidden xs:inline">·</span>
+              <span className="hidden xs:inline">BATCH 42 OPEN</span>
             </div>
 
             {/* Display Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5.5xl font-extrabold tracking-tight text-white leading-tight mb-6">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5.5xl font-extrabold tracking-tight text-white leading-tight mb-4 sm:mb-6">
               {currentLang === 'en' ? (
                 <>
                   Stop Translating in Your Head.{' '}
@@ -62,14 +63,14 @@ export const Hero: React.FC<HeroProps> = ({
             </h1>
 
             {/* Subtitle / Description */}
-            <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-base lg:text-lg text-slate-300 mb-6 sm:mb-8 leading-relaxed max-w-2xl font-bangla">
               {currentLang === 'en'
                 ? 'Designed specifically for Bangladeshi university students, job seekers, and corporate professionals aged 18-35. Master spoken English, conquer IELTS speaking, and overcome hesitation through live interactive Zoom breakout rooms.'
                 : 'বাংলাদেশের তরুণ শিক্ষার্থী ও চাকরিপ্রার্থীদের জন্য বিশেষায়িত কোর্স। অপ্রয়োজনীয় ব্যাকরণ মুখস্থ না করে প্রতিদিন লাইভ ব্রেকআউট রুমে স্পিকিং প্র্যাকটিসের মাধ্যমে মাত্র ৮ সপ্তাহে অর্জিত হবে আপনার স্বপ্নপূরণের সাবলীল ইংরেজি।'}
             </p>
 
             {/* Value checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-sm text-slate-200">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 mb-6 sm:mb-8 text-xs sm:text-sm text-slate-200">
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>
@@ -97,10 +98,10 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Primary Action Button Cluster */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={onOpenEnrollModal}
-                className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-[#0B1B3D] bg-gradient-to-r from-amber-400 via-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-xl shadow-lg hover:shadow-amber-500/20 transition-all cursor-pointer group"
+                className="inline-flex items-center justify-center px-6 py-3.5 text-xs sm:text-sm font-bold text-[#0B1B3D] bg-gradient-to-r from-amber-400 via-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-xl shadow-lg hover:shadow-amber-500/20 transition-all cursor-pointer group min-h-[44px]"
               >
                 <span>{currentLang === 'en' ? 'Enroll in Spoken English (৳3,500)' : 'কোর্সে ভর্তি হোন (৳৩,৫০০)'}</span>
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -108,7 +109,7 @@ export const Hero: React.FC<HeroProps> = ({
 
               <button
                 onClick={onOpenAssessment}
-                className="inline-flex items-center justify-center px-5 py-3.5 text-sm font-semibold text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 rounded-xl transition-all cursor-pointer"
+                className="inline-flex items-center justify-center px-5 py-3.5 text-xs sm:text-sm font-semibold text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 rounded-xl transition-all cursor-pointer min-h-[44px]"
               >
                 <Sparkles className="w-4 h-4 mr-2 text-amber-400" />
                 <span>{currentLang === 'en' ? 'Free English Level Test' : 'ফ্রি লেভেল টেস্ট দিন'}</span>
@@ -116,10 +117,10 @@ export const Hero: React.FC<HeroProps> = ({
 
               <button
                 onClick={onOpenVideoDemo}
-                className="inline-flex items-center justify-center px-4 py-3.5 text-xs font-semibold text-slate-300 hover:text-white transition-colors cursor-pointer group"
+                className="inline-flex items-center justify-center px-4 py-3 text-xs font-semibold text-slate-300 hover:text-white transition-colors cursor-pointer group min-h-[44px] border border-slate-800 sm:border-transparent rounded-xl"
               >
-                <span className="w-7 h-7 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center mr-2 group-hover:bg-amber-400 group-hover:text-[#0B1B3D] transition-colors">
-                  <Play className="w-3.5 h-3.5 fill-current" />
+                <span className="w-6 h-6 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center mr-2 group-hover:bg-amber-400 group-hover:text-[#0B1B3D] transition-colors">
+                  <Play className="w-3 h-3 fill-current ml-0.5" />
                 </span>
                 <span>{currentLang === 'en' ? 'Watch Class Demo' : 'ক্লাস ডেমো দেখুন'}</span>
               </button>
@@ -127,28 +128,35 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
 
           {/* Right Column: Hero Visual Asset */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-900 group">
               <img
-                src="/src/assets/images/hero_speakcraft_learning_1793359320826.jpg"
+                src={heroImg}
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = '/images/hero_speakcraft_learning.jpg';
+                }}
                 alt="Bangladeshi students practicing English conversation at SpeakCraft studio"
-                className="w-full h-80 sm:h-96 lg:h-[430px] object-cover transition-transform duration-500 group-hover:scale-103"
+                className="w-full h-72 sm:h-84 md:h-96 lg:h-[430px] object-cover transition-transform duration-500 group-hover:scale-102"
                 referrerPolicy="no-referrer"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D] via-transparent to-transparent opacity-85" />
 
               {/* Quiet overlay card */}
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#0B1B3D]/90 backdrop-blur-md border border-amber-400/30 text-white">
-                <div className="flex items-center justify-between mb-1.5">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3 sm:p-4 rounded-xl bg-[#0B1B3D]/95 backdrop-blur-md border border-amber-400/30 text-white">
+                <div className="flex flex-wrap items-center justify-between gap-1 mb-1.5">
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shrink-0" />
+                    <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-200">
                       {currentLang === 'en' ? 'Live Breakout Session' : 'লাইভ স্পিকিং সেশন'}
                     </span>
                   </div>
-                  <span className="text-xs font-bold text-amber-400">Dhaka Campus & Zoom</span>
+                  <span className="text-[11px] sm:text-xs font-bold text-amber-400 whitespace-nowrap">
+                    Dhaka & Zoom
+                  </span>
                 </div>
-                <p className="text-xs text-slate-300 line-clamp-2">
+                <p className="text-[11px] sm:text-xs text-slate-300 line-clamp-2 leading-relaxed font-bangla">
                   {currentLang === 'en'
                     ? '"In just 4 weeks, my fear of speaking in front of clients in English vanished completely." — Tanzeem, DU'
                     : '"মাত্র ৪ সপ্তাহের মধ্যে ক্লায়েন্ট ও শিক্ষকদের সামনে কথা বলার ভয় পুরোপুরি দূর হয়েছে।" — তানজীম, ঢাবি'}
@@ -159,7 +167,7 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
 
         {/* 4-Column Proof & Metrics Strip (Claim-to-Proof Adjacency) */}
-        <div className="mt-14 pt-8 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 text-center">
           <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800">
             <div className="text-2xl sm:text-3xl font-extrabold text-white tabular-nums tracking-tight mb-1">
               18,500<span className="text-amber-400">+</span>

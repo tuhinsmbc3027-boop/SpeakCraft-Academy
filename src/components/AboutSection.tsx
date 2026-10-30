@@ -1,6 +1,7 @@
 import React from 'react';
 import { Target, Users, BookOpen, ShieldCheck, Check, Sparkles } from 'lucide-react';
 import { Language } from '../types';
+import instructorImg from '../assets/images/instructor_lead_trainer_1793359322705.jpg';
 
 interface AboutSectionProps {
   currentLang: Language;
@@ -9,21 +10,21 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ currentLang, onOpenEnrollModal }) => {
   return (
-    <section id="about" className="py-16 lg:py-24 bg-white border-b border-slate-200">
+    <section id="about" className="py-12 sm:py-16 lg:py-24 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-16">
           <div className="flex items-center justify-center gap-2 text-xs font-semibold tracking-wider text-amber-600 mb-2 uppercase">
             <span>ABOUT SPEAKCRAFT ENGLISH</span>
             <span aria-hidden="true">·</span>
             <span>OUR MISSION & PEDAGOGY</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1B3D] tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1B3D] tracking-tight mb-4">
             {currentLang === 'en'
               ? 'Why Traditional English Learning Failed You in Bangladesh'
               : '১২ বছর ব্যাকরণ পড়েও কেন আমরা ইংরেজিতে কথা বলতে পারি না?'}
           </h2>
-          <p className="text-base text-slate-600 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-bangla">
             {currentLang === 'en'
               ? 'From primary school to university, Bangladeshi students spend years memorizing rigid grammar rules and passive translation charts. Yet in job interviews or client calls, we freeze. SpeakCraft was born to fix this with 100% active communication.'
               : 'স্কুল-কলেজে মুখস্থ করা টেন্সের চার্ট দিয়ে বাস্তব জীবনের কনভারসেশন হয় না। মাথায় বাংলা অনুবাদ করার অভ্যাস ভেঙে সরাসরি ইংরেজিতে চিন্তা করা ও আত্মবিশ্বাসী স্পিকিং রপ্ত করার জন্যই স্পিকক্রাফটের সৃষ্টি।'}
@@ -31,14 +32,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ currentLang, onOpenE
         </div>
 
         {/* 2-Column Story & Lead Instructor Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
           {/* Instructor Portrait & Credential Card */}
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-slate-50 group">
               <img
-                src="/src/assets/images/instructor_lead_trainer_1793359322705.jpg"
+                src={instructorImg}
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = '/images/instructor_lead_trainer.jpg';
+                }}
                 alt="Tanvir Ahmed, Lead Mentor & IELTS Band 8.5 Coach at SpeakCraft English"
-                className="w-full h-96 sm:h-[420px] object-cover object-top transition-transform duration-500 group-hover:scale-102"
+                className="w-full h-80 sm:h-96 lg:h-[420px] object-cover object-top transition-transform duration-500 group-hover:scale-102"
                 referrerPolicy="no-referrer"
               />
               <div className="p-5 bg-white border-t border-slate-100">

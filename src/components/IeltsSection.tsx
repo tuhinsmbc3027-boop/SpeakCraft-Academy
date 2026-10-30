@@ -3,6 +3,7 @@ import { Award, Timer, Volume2, Calculator, CheckCircle2, ChevronRight, Play, Pa
 import { IELTS_CUE_CARDS } from '../data/mockData';
 import { speakText } from '../utils/speech';
 import { Language } from '../types';
+import ieltsImg from '../assets/images/ielts_preparation_desk_1793359323164.jpg';
 
 interface IeltsSectionProps {
   currentLang: Language;
@@ -98,7 +99,11 @@ export const IeltsSection: React.FC<IeltsSectionProps> = ({ currentLang, onEnrol
           <div className="lg:col-span-5 space-y-6">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white">
               <img
-                src="/src/assets/images/ielts_preparation_desk_1793359323164.jpg"
+                src={ieltsImg}
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = '/images/ielts_preparation_desk.jpg';
+                }}
                 alt="IELTS Preparation desk with official Cambridge books and 8.5 scorecard"
                 className="w-full h-56 sm:h-64 object-cover"
                 referrerPolicy="no-referrer"

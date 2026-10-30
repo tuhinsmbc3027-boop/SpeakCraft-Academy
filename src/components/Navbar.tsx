@@ -30,32 +30,32 @@ export const Navbar: React.FC<NavbarProps> = ({
     <>
       <header className="sticky top-0 z-40 bg-[#0B1B3D] text-white border-b border-[#1E293B]/80 shadow-md">
         {/* Top utility sub-strip for Bangladeshi trust & contact */}
-        <div className="bg-[#071126] border-b border-slate-800/60 px-4 lg:px-8 py-1.5 text-xs text-slate-300 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-amber-400 font-semibold tracking-wide">
-              {currentLang === 'en' ? 'New Batch Enrollment Open!' : 'নতুন ব্যাচে ভর্তি চলছে!'}
+        <div className="bg-[#071126] border-b border-slate-800/60 px-3 sm:px-6 lg:px-8 py-1.5 text-[11px] sm:text-xs text-slate-300 flex items-center justify-between gap-2 overflow-hidden">
+          <div className="flex items-center gap-2 truncate">
+            <span className="text-amber-400 font-semibold tracking-wide shrink-0">
+              {currentLang === 'en' ? 'Admission Open!' : 'ভর্তি চলছে!'}
             </span>
             <span className="hidden sm:inline text-slate-400">·</span>
-            <span className="hidden sm:inline">
+            <span className="hidden sm:inline truncate">
               {currentLang === 'en' ? '8 Weeks to Fluency with Live Zoom Classes' : 'লাইভ ক্লাসে ৮ সপ্তাহে সাবলীল ইংরেজি'}
             </span>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <button
               onClick={onOpenAssessment}
               className="text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-1 font-medium cursor-pointer"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>{currentLang === 'en' ? 'Free Level Test' : 'ফ্রি লেভেল টেস্ট'}</span>
+              <Sparkles className="w-3.5 h-3.5 shrink-0" />
+              <span>{currentLang === 'en' ? 'Level Test' : 'লেভেল টেস্ট'}</span>
             </button>
-            <span className="text-slate-600">|</span>
+            <span className="text-slate-600 hidden xs:inline">|</span>
             <a
-              href="tel:+8801700000000"
-              className="flex items-center gap-1 hover:text-amber-300 transition-colors"
+              href="tel:+8801894772211"
+              className="hidden xs:flex items-center gap-1 hover:text-amber-300 transition-colors font-mono"
             >
-              <Phone className="w-3 h-3 text-amber-400" />
-              <span>+880 1894-772211</span>
+              <Phone className="w-3 h-3 text-amber-400 shrink-0" />
+              <span>01894-772211</span>
             </a>
           </div>
         </div>

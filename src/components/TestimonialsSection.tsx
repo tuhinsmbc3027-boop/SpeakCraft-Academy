@@ -87,8 +87,13 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="w-12 h-12 rounded-full object-cover border border-amber-400/50 shrink-0"
+                  className="w-12 h-12 rounded-full object-cover border border-amber-400/50 shrink-0 bg-slate-200"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    const initials = t.name.split(' ').map(n => n[0]).join('').slice(0, 2);
+                    e.currentTarget.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><rect width="48" height="48" rx="24" fill="%230B1B3D"/><text x="50%" y="54%" font-family="sans-serif" font-weight="bold" font-size="16" fill="%23F59E0B" text-anchor="middle" dominant-baseline="middle">${initials}</text></svg>`;
+                  }}
                 />
                 <div>
                   <h4 className="text-sm font-bold text-[#0B1B3D]">{t.name}</h4>
